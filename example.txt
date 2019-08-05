@@ -1,0 +1,6 @@
+This is an example
+Of a file
+With several lines
+hello!
+hello!
+hello!
