@@ -5,7 +5,6 @@ Symmetric Key Encryption
 Symmetric encryption is a type of encryption where only one key (a secret key) is used to both encrypt and decrypt electronic information. The entities communicating via symmetric encryption must exchange the key so that it can be used in the decryption process.
 
 * Uses an algorithm like AES
-*
 
 
 Example:
@@ -36,12 +35,16 @@ key = ''.join(chr(random.randint(0, 0xFF)) for i in range(16))
 print('Genearate key:')
 print('key', [x for x in key])
 
+# AES example
 from Crypto.Cipher import AES
 obj = AES.new('This is a key123', AES.MODE_CBC, 'This is an IV456')
 message = "The answer is no"
 ciphertext = obj.encrypt(message)
-ciphertext
-'\xd6\x83\x8dd!VT\x92\xaa`A\x05\xe0\x9b\x8b\xf1'
+print('AES Example Encrypted:')
+print(ciphertext)
+# ciphertext
+# '\xd6\x83\x8dd!VT\x92\xaa`A\x05\xe0\x9b\x8b\xf1'
 obj2 = AES.new('This is a key123', AES.MODE_CBC, 'This is an IV456')
+print('AES Example Decrypted:')
 obj2.decrypt(ciphertext)
-'The answer is no'
+# 'The answer is no'
