@@ -3,6 +3,8 @@ RSA
 ---
 
 Used to generate our Private and Public keys. The RSA tool stores these keys in files on our file system. Then when we want to encrypt a message we load the Public Key and the Clear Text Message into the Encrypt function of the RSA Tool which generates our Encrypted Data. To Decrypt the RSA Tool loads the Private Key and the Encrypted Text Message into the Decrypt function and this returns the Clear Text Message.
+
+Below is an example implemtation in Python of the RSA Tool:
 '''
 
 from Crypto.PublicKey import RSA
@@ -28,9 +30,6 @@ class CryptoRSA:
         contents = f.read()
         f.close()
         return contents
-
-    # def __generate_random(self):
-    #     return Random.new().read()
 
     def generate_keys(self):
         keys = RSA.generate(4096)
